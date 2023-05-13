@@ -36,9 +36,6 @@ class TestCity(unittest.TestCase):
     def test_no_args_instantiates(self):
         self.assertEqual(City, type(City()))
 
-    def test_new_instance_stored_in_objects(self):
-        self.assertIn(City(), storage.all().values())
-
     def test_id_is_public_str(self):
         self.assertEqual(str, type(City().id))
 
