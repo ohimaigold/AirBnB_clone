@@ -2,14 +2,15 @@
 """Unittest module for class Amenity."""
 
 import unittest
-import os
 from models.amenity import Amenity
 from models.base_model import BaseModel
+import os
 import uuid
 import datetime
 import re
 import time
 import json
+
 
 class TestAmenity(unittest.TestCase):
     """Amenity model class test case"""
@@ -41,7 +42,9 @@ class TestAmenity(unittest.TestCase):
     #    self.assertTrue('updated_at' in self.amenity.__dict__)
     #    self.assertTrue('name' in self.amenity.__dict__)
     # OR
+
     a = Amenity()
+
     def test_has_attributes(self):
         """verify if attributes exist"""
         self.assertTrue(hasattr(self.a, 'name'))

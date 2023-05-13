@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Defines unittests for models/base_model.py.
 Unittest classes:
-    
 """
+
 import uuid
 import os
 import re
@@ -16,6 +16,7 @@ from datetime import datetime
 from time import sleep
 import json
 
+
 class TestBaseModel_Instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
 
@@ -23,7 +24,9 @@ class TestBaseModel_Instantiation(unittest.TestCase):
         """Test instance"""
         b1 = BaseModel()
         self.assertIsInstance(b1, BaseModel)
-        self.assertEqual(str(type(b1)), "<class 'models.base_model.BaseModel'>")
+        self.assertEqual(
+            str(type(b1)), "<class 'models.base_model.BaseModel'>"
+            )
         self.assertTrue(issubclass(type(b1), BaseModel))
 
     def test_ContainsId(self):
@@ -143,6 +146,7 @@ class TestBaseModel_Instantiation(unittest.TestCase):
         self.assertEqual(b1.created_at, dt)
         self.assertEqual(b1.updated_at, dt)
 
+
 class TestBaseModel_Instance_Print(unittest.TestCase):
     """Unittest for testing the __str__ method."""
 
@@ -173,6 +177,7 @@ class TestBaseModel_Instance_Print(unittest.TestCase):
         d2["created_at"] = repr(d2["created_at"])
         d2["updated_at"] = repr(d2["updated_at"])
         self.assertEqual(d, d2)
+
 
 class TestBaseModel_Save_Method(unittest.TestCase):
     """Unittest for testing the save method."""
@@ -207,6 +212,7 @@ class TestBaseModel_Save_Method(unittest.TestCase):
         b1 = BaseModel()
         with self.assertRaises(TypeError):
             b1.save(None)
+
 
 class TestBaseModel_to_Dict_Method(unittest.TestCase):
     """Unittest for testing the to_dict method of BaseModel class."""

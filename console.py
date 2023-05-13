@@ -98,7 +98,6 @@ class HBNBCommand(cmd.Cmd):
             #    del (storage.all()[new_str])
                 storage.save()
 
-
     def do_all(self, line):
         """ Print all instances in string representation """
         objects = []
@@ -176,8 +175,9 @@ class HBNBCommand(cmd.Cmd):
         if line is None:
             return
 
-        cmdPattern = "^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
-        paramsPattern = """^"([^"]+)"(?:,\s*(?:"([^"]+)"|(\{[^}]+\}))(?:,\s*(?:("?[^"]+"?)))?)?"""
+        cmdPattern = r"^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
+        paramsPattern = r'''^"([^"]+)"(?:,\s*(?:"([^"]+)"|(\{[^}]+\}))'''
+        paramsPattern += r'''(?:,\s*(?:("?[^"]+"?)))?)?'''
         m = re.match(cmdPattern, line)
         if not m:
             super().default(line)

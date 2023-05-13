@@ -13,6 +13,7 @@ from models import storage
 from models.base_model import BaseModel
 import uuid
 
+
 class TestCity(unittest.TestCase):
     """City model class test case"""
 

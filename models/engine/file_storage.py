@@ -66,5 +66,5 @@ class FileStorage:
                     for key, val in new_obj.items():
                         obj = self.class_dict[val['__class__']](**val)
                         type(self).__objects[key] = obj
-            except Exception:
+            except FileNotFoundError:
                 pass
